@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" onclick="jump()">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Running Game</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      /* .game img {
+        border: 2px solid red;
+      } */
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #b92b27; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #1565c0,
+          #b92b27
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #1565c0,
+          #b92b27
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      .container {
+        top: 20vh;
+        box-shadow: 4px 4px 4px 4px;
+        height: 60vh;
+        width: 64vw;
+        position: relative;
+      }
+      #bg {
+        height: 60vh;
+        width: 64vw;
+        z-index: 1;
+      }
+      .boy {
+        position: absolute;
+        z-index: 10;
+        height: 38vh;
+        top: 13vh;
+        left: 0px;
+        /* animation: jumping 500ms infinite; */
+      }
+      .animating {
+        animation: jumping 500ms linear;
+      }
+      @keyframes jumping {
+        0% {
+          top: 13vh;
+        }
+        30% {
+          top: -15vh;
+        }
+
+        100% {
+          top: 13vh;
+        }
+      }
+      #dog {
+        position: absolute;
+        z-index: 11;
+        height: 21vh;
+        top: 29vh;
+        right: 11px;
+        animation: move 1s infinite linear;
+      }
+
+      @keyframes move {
+        0% {
+          left: 790px;
+        }
+        100% {
+          left: -40px;
+        }
+      }
+      #unseen{
+        visibility:hidden;
+         top:41vh; 
+         left:90vh;
+         z-index:100;
+         text-align: center;
+         box-shadow: 4px 4px 4px 4px;
+         background: #b92b27; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #1565c0,
+          #b92b27
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #1565c0,
+          #b92b27
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          position: absolute;
+      }
+      #instruction{
+        position: absolute;
+    top: 7vh;
+    font-size: 3rem;
+    font-family: cursive;
+    font-weight: 900;
+    color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="instruction">Click to Jump!</h1>
+    <h1 id="unseen" >Thank you!<br>
+    See ya again ;)</h1>
+    <div class="container">
+        
+      <div class="game">
+        <img src="Images/bg3.jpg" alt="" id="bg" />
+        <img src="Images/boy.gif" alt="" class="boy" />
+        <img src="Images/dog.gif" alt="" height="200" id="dog" />
+      </div>
+    </div>
+    <!-- <button onclick="jump()">Jump</button> -->
+  </body>
+  <script src="script.js"></script>
+</html>
